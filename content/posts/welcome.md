@@ -1,20 +1,12 @@
 ---
-title: "Welcome to my corner of the internet"
+title: "Welcome"
 date: "2025-01-01"
-description: "Why I made a small place to collect notes, projects, and experiments."
+time: "10:48"
+description: "Adventures, misadventures, and the search for how the world is built."
+coverImage: "/images/sunrise-beach.svg"
 tags:
   - personal
   - hello
 ---
 
-Hello, and welcome.
-
-This is a small, intentionally simple place to share what I am making and learning. I will use it for project notes, unfinished ideas, and the occasional longer reflection.
-
-## What to expect
-
-- Notes from projects
-- Small games and experiments
-- Things worth remembering
-
-Thanks for stopping by.
+Just want to write here about my adventures and misadventures, the complexity and simplicity of life, and try my best to educate myself on the things that build this world.

@@ -1,0 +1,12 @@
+.game { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow); max-width: 32rem; padding: 0.85rem; }
+.status { color: var(--accent); font: 800 0.75rem/1 Inter, ui-sans-serif, sans-serif; letter-spacing: 0.08em; margin: 0 0 0.75rem; text-transform: uppercase; }
+.canvas { border: 1px solid var(--line); display: block; height: auto; image-rendering: pixelated; max-width: 100%; width: 100%; }
+.actions, .controls { display: flex; gap: 0.6rem; }
+.actions { margin-top: 0.85rem; }
+.actions button, .controls button { background: var(--accent); border: 0; border-radius: var(--radius); color: var(--bg); cursor: pointer; font: 800 0.85rem/1 Inter, ui-sans-serif, sans-serif; padding: 0.75rem 0.9rem; }
+.actions .secondary, .controls button { background: transparent; border: 1px solid var(--line); color: var(--text); }
+.actions button:hover, .controls button:hover { border-color: var(--accent); color: var(--accent); }
+.controls { justify-content: center; margin-top: 0.85rem; }
+.controls button { min-width: 4rem; }
+.game > p { color: var(--muted); font-family: Inter, ui-sans-serif, sans-serif; font-size: 0.7rem; line-height: 1.4; margin: 0.9rem 0 0; text-align: center; }
+@media (min-width: 40rem) { .game { padding: 1rem; } }

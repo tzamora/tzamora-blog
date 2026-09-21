@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" role="img" aria-labelledby="title desc">
+  <title id="title">Sunrise at the beach</title>
+  <desc id="desc">An illustrated warm sunrise over a calm ocean and sandy beach.</desc>
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#312d65"/>
+      <stop offset=".48" stop-color="#dd6e65"/>
+      <stop offset=".72" stop-color="#f5aa69"/>
+      <stop offset="1" stop-color="#ffd795"/>
+    </linearGradient>
+    <linearGradient id="sea" x1="0" y1="0" x2="0" y2="1">
+      <stop stop-color="#346a81"/>
+      <stop offset="1" stop-color="#143d59"/>
+    </linearGradient>
+    <linearGradient id="sand" x1="0" y1="0" x2="0" y2="1">
+      <stop stop-color="#e9b878"/>
+      <stop offset="1" stop-color="#b87352"/>
+    </linearGradient>
+    <filter id="glow"><feGaussianBlur stdDeviation="18"/></filter>
+  </defs>
+  <rect width="1200" height="600" fill="url(#sky)"/>
+  <circle cx="600" cy="279" r="95" fill="#ffe5a3" opacity=".45" filter="url(#glow)"/>
+  <circle cx="600" cy="279" r="61" fill="#fff1b8"/>
+  <path d="M0 340C150 322 253 349 391 337s247-32 408-3 282 10 401-14v280H0Z" fill="url(#sea)"/>
+  <path d="M0 396c109-12 203 14 314 2s191-6 296 8 207 19 313 1 188-17 277-2v54H0Z" fill="#79b7bd" opacity=".48"/>
+  <path d="M0 456c148-27 252 17 399 4s274-37 411-14 242 19 390-1v155H0Z" fill="url(#sand)"/>
+  <path d="M0 489c160-23 287 24 433 1s295-28 442-4 207 4 325-13" fill="none" stroke="#ffe0a4" stroke-width="8" opacity=".65"/>
+  <path d="M435 343h330l-74 13H507Z" fill="#fff1b8" opacity=".55"/>
+  <path d="M520 358h160l-41 13h-78Z" fill="#fff1b8" opacity=".38"/>
+</svg>

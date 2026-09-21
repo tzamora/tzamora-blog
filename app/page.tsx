@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Image from "next/image";
 import { PostList } from "@/components/PostList";
 import { getAllPosts } from "@/lib/posts";
 
@@ -7,15 +7,13 @@ export default function HomePage() {
 
   return (
     <>
-      <section className="hero shell">
-        <p className="eyebrow">Hello, I&apos;m Tzamora</p>
-        <h1>A small corner for notes, experiments, and things I make.</h1>
-        <p className="lede">I write about what I&apos;m learning and share the projects that keep me curious.</p>
+      <section className="shell intro">
+        <Image className="profile-image" src="/images/antonio.jpg" alt="Antonio" width={128} height={128} priority />
+        <p>Hi, my name is Antonio, a humble programmer ☯️</p>
       </section>
-      <section className="shell section" aria-labelledby="recent-posts">
+      <section className="shell section home-posts" aria-labelledby="posts">
         <div className="section-heading">
-          <h2 id="recent-posts">Recent writing</h2>
-          <Link href="/blog">All posts <span aria-hidden="true">→</span></Link>
+          <h1 id="posts">Posts</h1>
         </div>
         <PostList posts={posts} />
       </section>

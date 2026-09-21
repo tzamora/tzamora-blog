@@ -1,0 +1,41 @@
+.demo {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  max-width: 34rem;
+  padding: 1.5rem;
+}
+
+.status {
+  color: var(--muted);
+  font-family: Inter, ui-sans-serif, sans-serif;
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  margin: 0 0 1.5rem;
+  text-transform: uppercase;
+}
+
+.button {
+  background: var(--accent);
+  border: 0;
+  border-radius: var(--radius);
+  color: var(--bg);
+  cursor: pointer;
+  font: 800 1rem/1 Inter, ui-sans-serif, sans-serif;
+  padding: 0.9rem 1rem;
+}
+
+.button:hover { background: var(--accent-dark); }
+
+.pitch { display: block; font-family: Inter, ui-sans-serif, sans-serif; font-size: 0.9rem; font-weight: 700; margin-top: 2rem; }
+.pitch span { display: flex; justify-content: space-between; }
+.pitch output { color: var(--accent); }
+.pitch input { accent-color: var(--accent); cursor: pointer; display: block; margin: 0.85rem 0 0.25rem; width: 100%; }
+.pitch small { color: var(--muted); font-size: 0.7rem; font-weight: 700; }
+.pitch small:last-child { float: right; }
+
+@media (min-width: 40rem) {
+  .demo { padding: 2rem; }
+}

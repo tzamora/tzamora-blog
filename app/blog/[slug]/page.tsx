@@ -1,3 +1,4 @@
+import Image from "next/image";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { formatDate } from "@/components/PostCard";
@@ -20,8 +21,11 @@ export default async function PostPage({ params }: Props) {
 
   return (
     <article className="shell article">
+      {post.coverImage && (
+        <Image className="article-cover" src={post.coverImage} alt={post.title} width={1200} height={600} priority />
+      )}
       <header className="article-header">
-        <p className="eyebrow">{formatDate(post.date)}</p>
+        <p className="eyebrow">{formatDate(post.date, post.time)}</p>
         <h1>{post.title}</h1>
         <p className="lede">{post.description}</p>
         {post.tags.length > 0 && <ul className="tag-list">{post.tags.map((tag) => <li key={tag}>{tag}</li>)}</ul>}

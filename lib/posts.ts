@@ -10,24 +10,30 @@ export type Post = {
   slug: string;
   title: string;
   date: string;
+  time?: string;
   description: string;
   tags: string[];
+  coverImage?: string;
+  excerpt?: string;
   content?: string;
 };
 
-type Frontmatter = Omit<Post, "slug" | "content">;
+type Frontmatter = Omit<Post, "slug" | "excerpt" | "content">;
 
 function getPostFiles() {
   return fs.readdirSync(postsDirectory).filter((file) => file.endsWith(".md"));
 }
 
-function formatPost(slug: string, data: Partial<Frontmatter>): Post {
+function formatPost(slug: string, data: Partial<Frontmatter>, excerpt?: string): Post {
   return {
     slug,
     title: data.title ?? slug,
     date: data.date ?? "",
+    time: data.time,
     description: data.description ?? "",
     tags: data.tags ?? [],
+    coverImage: data.coverImage,
+    excerpt,
   };
 }
 
@@ -36,7 +42,8 @@ export function getAllPosts(): Post[] {
     .map((file) => {
       const slug = file.replace(/\.md$/, "");
       const source = fs.readFileSync(path.join(postsDirectory, file), "utf8");
-      return formatPost(slug, matter(source).data);
+      const { data, content } = matter(source);
+      return formatPost(slug, data, createExcerpt(content));
     })
     .sort((a, b) => b.date.localeCompare(a.date));
 }
@@ -49,5 +56,9 @@ export async function getPostBySlug(slug: string): Promise<Post | null> {
   const { data, content } = matter(source);
   const renderedContent = (await remark().use(html).process(content)).toString();
 
-  return { ...formatPost(slug, data), content: renderedContent };
+  return { ...formatPost(slug, data, createExcerpt(content)), content: renderedContent };
+}
+
+function createExcerpt(content: string) {
+  return content.replace(/^#+\s.*$/gm, "").replace(/[*_`]/g, "").replace(/\s+/g, " ").trim().slice(0, 220);
 }

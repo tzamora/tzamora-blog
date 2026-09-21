@@ -1,0 +1,14 @@
+.game { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow); max-width: 25rem; padding: 1rem; }
+.topbar { display: flex; font: 800 0.75rem/1 Inter, ui-sans-serif, sans-serif; justify-content: space-between; letter-spacing: 0.08em; margin-bottom: 0.85rem; text-transform: uppercase; }
+.topbar span:last-child { color: var(--accent); }
+.board { background: #0b1019; border: 1px solid #354053; display: grid; grid-template-columns: repeat(10, 1fr); overflow: hidden; }
+.cell { align-items: center; aspect-ratio: 1; border: 1px solid rgb(255 255 255 / 0.045); display: flex; filter: drop-shadow(0 2px 1px rgb(0 0 0 / 0.55)); font-size: clamp(0.85rem, 4.2vw, 1.35rem); justify-content: center; line-height: 1; }
+.actions, .controls { display: flex; gap: 0.6rem; }
+.actions { margin-top: 1rem; }
+.actions button, .controls button { background: var(--accent); border: 0; border-radius: var(--radius); color: var(--bg); cursor: pointer; font: 800 0.85rem/1 Inter, ui-sans-serif, sans-serif; padding: 0.75rem 0.9rem; }
+.actions .secondary, .controls button { background: transparent; border: 1px solid var(--line); color: var(--text); }
+.controls { justify-content: center; margin-top: 1rem; }
+.controls button { font-size: 1.1rem; min-width: 3rem; }
+.actions button:hover, .controls button:hover { border-color: var(--accent); color: var(--accent); }
+.help { color: var(--muted); font-family: Inter, ui-sans-serif, sans-serif; font-size: 0.7rem; line-height: 1.4; margin: 1rem 0 0; text-align: center; }
+@media (min-width: 40rem) { .game { padding: 1.25rem; } .cell { font-size: 1.35rem; } }
